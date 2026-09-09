@@ -1,24 +1,26 @@
-# Side Quest – Party Build 1.0
+# Side Quest – Party Build 1.1
 
-Dieser Ordner kann unverändert auf einen statischen **HTTPS-Host** hochgeladen werden.
+Hotfix + Timer-Update.
 
-## Dateien
-- `index.html` – komplette App
-- `manifest.webmanifest` – Installationsinformationen
-- `sw.js` – Offline-Cache
-- `icons/` – App-Icons
-- `README_PARTY_RELEASE.md` – Setup und Ablauf
-- `TEST_REPORT.md` – technische Prüfungen
+## Behoben
+- Antwortfelder bei Informations-/Long-Term-Missionen lassen sich nun auf Touch-Geräten normal beschreiben.
+- Ursache war ein globaler Aktivitätslistener, der bei jedem Tastendruck/Touch den Screen neu gerendert hat.
+- Eingabeaktivität setzt den Auto-Logout weiterhin zurück, ohne die UI neu aufzubauen.
 
-## Frischer Start
-1. URL auf dem Tablet öffnen.
-2. PWA zum Home-Bildschirm hinzufügen / installieren.
-3. Admin öffnen – initiale PIN `2468`.
-4. PIN ändern.
-5. Gästeliste einfügen.
-6. Missionen prüfen.
-7. Backup exportieren.
-8. Pre-Party-Check durchführen.
-9. Flugmodus-/Neustarttest durchführen.
+## Neu: persönliche Missionstimer
+Für zeitkritische Missionen erscheint im Missionsdetail ein eigener Timer.
+Aktuell aktiviert für:
+- `man018`: 5 Minuten
+- `grp001`: 5 Minuten
+- `grp007`: 10 Minuten
 
-Es gibt kein Backend und keine externen Laufzeitressourcen.
+Ablauf:
+1. Spieler öffnet die Mission.
+2. `Timer starten` drücken, wenn der Versuch beginnt.
+3. Countdown läuft nur für dieses Assignment und bleibt nach `Fertig`/Logout persistent.
+4. Wird innerhalb der Zeit `Mission einlösen` gedrückt, geht es direkt weiter.
+5. Bei späterer Einlösung fragt die App, ob die Mission innerhalb der vorgegebenen Zeit geschafft wurde.
+6. Bei `Nein` bleibt die Mission aktiv und der Timer kann für einen neuen Versuch erneut gestartet werden.
+
+## Upload
+Für GitHub Pages den **Inhalt dieses Ordners** hochladen, sodass `index.html`, `sw.js` und `manifest.webmanifest` direkt im Repository-Root liegen.
