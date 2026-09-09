@@ -1,0 +1,19 @@
+{
+  "pass": true,
+  "activeMissions": 90,
+  "optionalMissions": 14,
+  "bulkGuestImportTest": 8,
+  "checks": [
+    "draw active-only",
+    "no self target",
+    "completion score",
+    "safe status",
+    "full call penalty",
+    "discard ceil-half",
+    "open penalty",
+    "idempotent end",
+    "settlement snapshot stable",
+    "backup envelope/timestamp"
+  ],
+  "browserDeviceTest": "pending on target tablet because local browser navigation is administrator-blocked in this environment"
+}
